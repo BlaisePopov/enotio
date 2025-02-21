@@ -19,13 +19,13 @@ const (
 	DefaultRequestTimeout = 30 * time.Second
 )
 
-type client struct {
+type Client struct {
 	httpClient *http.Client
 	config     Config
 }
 
-func NewClient(cfg Config) *client {
-	client := &client{
+func NewClient(cfg Config) *Client {
+	client := &Client{
 		config: cfg,
 	}
 
@@ -45,7 +45,7 @@ func NewClient(cfg Config) *client {
 }
 
 // sendRequest отправляет HTTP-запрос к API.
-func (c *client) sendRequest(method, url string, body []byte) ([]byte, error) {
+func (c *Client) sendRequest(method, url string, body []byte) ([]byte, error) {
 	req, err := http.NewRequest(method, c.config.BaseURL+url, bytes.NewBuffer(body))
 	if err != nil {
 		return nil, err

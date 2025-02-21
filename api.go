@@ -12,7 +12,7 @@ import (
 //   - request: структура GetPaymentTariffsRequest.
 //
 // Возвращаемое значение: структура PaymentTariffsResponse и ошибка, если она возникла.
-func (c *client) GetPaymentTariffs(request GetPaymentTariffsRequest) (*PaymentTariffsResponse, error) {
+func (c *Client) GetPaymentTariffs(request GetPaymentTariffsRequest) (*PaymentTariffsResponse, error) {
 	paymentTariffsResponse := &PaymentTariffsResponse{}
 
 	body, err := c.sendRequest("GET", "/shops/"+request.ShopID+"/payment-tariffs", nil)
@@ -39,7 +39,7 @@ func (c *client) GetPaymentTariffs(request GetPaymentTariffsRequest) (*PaymentTa
 //   - request: структура CreateInvoiceRequest.
 //
 // Возвращаемое значение: структура InvoiceResponse и ошибка, если она возникла.
-func (c *client) CreateInvoice(request CreateInvoiceRequest) (*InvoiceResponse, error) {
+func (c *Client) CreateInvoice(request CreateInvoiceRequest) (*InvoiceResponse, error) {
 	invoiceResponse := &InvoiceResponse{}
 
 	params, err := json.Marshal(request)
@@ -71,7 +71,7 @@ func (c *client) CreateInvoice(request CreateInvoiceRequest) (*InvoiceResponse, 
 //   - request: структура CreateH2HRequest.
 //
 // Возвращаемое значение: структура H2HResponse и ошибка, если она возникла.
-func (c *client) CreateH2H(request CreateH2HRequest) (*H2HResponse, error) {
+func (c *Client) CreateH2H(request CreateH2HRequest) (*H2HResponse, error) {
 	h2hResponse := &H2HResponse{}
 
 	params, err := json.Marshal(request)
@@ -103,7 +103,7 @@ func (c *client) CreateH2H(request CreateH2HRequest) (*H2HResponse, error) {
 //   - request: структура GetInvoiceInfoRequest.
 //
 // Возвращаемое значение: структура InvoiceInfoResponse и ошибка, если она возникла.
-func (c *client) GetInvoiceInfo(request GetInvoiceInfoRequest) (*InvoiceInfoResponse, error) {
+func (c *Client) GetInvoiceInfo(request GetInvoiceInfoRequest) (*InvoiceInfoResponse, error) {
 	invoiceInfoResponse := &InvoiceInfoResponse{}
 
 	params := url.Values{}
@@ -139,7 +139,7 @@ func (c *client) GetInvoiceInfo(request GetInvoiceInfoRequest) (*InvoiceInfoResp
 //   - userID: идентификатор пользователя.
 //
 // Возвращаемое значение: структура BalanceResponse и ошибка, если она возникла.
-func (c *client) GetBalance(userID string) (*BalanceResponse, error) {
+func (c *Client) GetBalance(userID string) (*BalanceResponse, error) {
 	balanceResponse := &BalanceResponse{}
 
 	body, err := c.sendRequest("GET", "/account/users/"+userID+"/balance", nil)
@@ -166,7 +166,7 @@ func (c *client) GetBalance(userID string) (*BalanceResponse, error) {
 //   - request: структура CreatePayoffRequest.
 //
 // Возвращаемое значение: структура PayoffResponse и ошибка, если она возникла.
-func (c *client) CreatePayoff(request CreatePayoffRequest) (*PayoffResponse, error) {
+func (c *Client) CreatePayoff(request CreatePayoffRequest) (*PayoffResponse, error) {
 	payoffResponse := &PayoffResponse{}
 
 	params, err := json.Marshal(request)
@@ -198,7 +198,7 @@ func (c *client) CreatePayoff(request CreatePayoffRequest) (*PayoffResponse, err
 //   - request: структура GetPayoffInfoRequest.
 //
 // Возвращаемое значение: структура PayoffInfoResponse и ошибка, если она возникла.
-func (c *client) GetPayoffInfo(request GetPayoffInfoRequest) (*PayoffInfoResponse, error) {
+func (c *Client) GetPayoffInfo(request GetPayoffInfoRequest) (*PayoffInfoResponse, error) {
 	payoffInfoResponse := &PayoffInfoResponse{}
 
 	params := url.Values{}
@@ -234,7 +234,7 @@ func (c *client) GetPayoffInfo(request GetPayoffInfoRequest) (*PayoffInfoRespons
 //   - request: структура GetSbpBankListRequest.
 //
 // Возвращаемое значение: структура SbpBankListResponse и ошибка, если она возникла.
-func (c *client) GetSbpBankList(request GetSbpBankListRequest) (*SbpBankListResponse, error) {
+func (c *Client) GetSbpBankList(request GetSbpBankListRequest) (*SbpBankListResponse, error) {
 	sbpBankListResponse := &SbpBankListResponse{}
 
 	params := url.Values{}
