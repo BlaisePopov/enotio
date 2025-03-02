@@ -25,11 +25,11 @@ type Tariff struct {
 }
 
 type InvoiceResponse struct {
-	ID       string  `json:"id"`
-	Amount   float64 `json:"amount"`
-	Currency string  `json:"currency"`
-	URL      string  `json:"url"`
-	Expired  string  `json:"expired"`
+	ID       string `json:"id"`
+	Amount   string `json:"amount"`
+	Currency string `json:"currency"`
+	URL      string `json:"url"`
+	Expired  string `json:"expired"`
 }
 
 type H2HResponse struct {
@@ -47,24 +47,24 @@ type H2HResponse struct {
 }
 
 type InvoiceInfoResponse struct {
-	InvoiceID             string  `json:"invoice_id"`
-	OrderID               string  `json:"order_id"`
-	ShopID                string  `json:"shop_id"`
-	Status                string  `json:"status"`
-	InvoiceAmount         float64 `json:"invoice_amount"`
-	Credited              float64 `json:"credited"`
-	Currency              string  `json:"currency"`
-	PayService            string  `json:"pay_service"`
-	PayerDetails          string  `json:"payer_details"`
-	CommissionAmount      float64 `json:"commission_amount"`
-	CommissionPercent     float64 `json:"commission_percent"`
-	ShopCommissionAmount  float64 `json:"shop_commission_amount"`
-	UserCommissionAmount  float64 `json:"user_commission_amount"`
-	UserCommissionPercent float64 `json:"user_commission_percent"`
-	CustomField           string  `json:"custom_field"`
-	CreatedAt             string  `json:"created_at"`
-	ExpiredAt             string  `json:"expired_at"`
-	PaidAt                string  `json:"paid_at"`
+	InvoiceID             string   `json:"invoice_id"`
+	OrderID               string   `json:"order_id"`
+	ShopID                string   `json:"shop_id"`
+	Status                string   `json:"status"`
+	InvoiceAmount         float64  `json:"invoice_amount"`
+	Credited              *float64 `json:"credited"`
+	Currency              string   `json:"currency"`
+	PayService            *string  `json:"pay_service"`
+	PayerDetails          *string  `json:"payer_details"`
+	CommissionAmount      float64  `json:"commission_amount"`
+	CommissionPercent     float64  `json:"commission_percent"`
+	ShopCommissionAmount  float64  `json:"shop_commission_amount"`
+	UserCommissionAmount  float64  `json:"user_commission_amount"`
+	UserCommissionPercent float64  `json:"user_commission_percent"`
+	CustomField           string   `json:"custom_field"`
+	CreatedAt             string   `json:"created_at"`
+	ExpiredAt             string   `json:"expired_at"`
+	PaidAt                string   `json:"paid_at"`
 }
 
 type BalanceResponse struct {
@@ -74,9 +74,9 @@ type BalanceResponse struct {
 }
 
 type PayoffResponse struct {
-	PayoffID          string  `json:"payoff_id"`
-	AmountWithdrawRub float64 `json:"amount_withdraw_rub"`
-	Balance           float64 `json:"balance"`
+	PayoffID          string `json:"payoff_id"`
+	AmountWithdrawRub string `json:"amount_withdraw_rub"`
+	Balance           string `json:"balance"`
 }
 
 type PayoffInfoResponse struct {
@@ -84,7 +84,7 @@ type PayoffInfoResponse struct {
 	Status            string  `json:"status"`
 	OrderID           string  `json:"order_id"`
 	Service           string  `json:"service"`
-	Wallet            string  `json:"wallet"`
+	Wallet            *string `json:"wallet"`
 	Type              string  `json:"type"`
 	Subtract          string  `json:"subtract"`
 	Amount            float64 `json:"amount"`
@@ -92,7 +92,7 @@ type PayoffInfoResponse struct {
 	CommissionRub     float64 `json:"commission_rub"`
 	ReceiveCurrency   string  `json:"receive_currency"`
 	AmountReceive     string  `json:"amount_receive"`
-	Comment           string  `json:"comment"`
+	Comment           *string `json:"comment"`
 	CreatedAt         string  `json:"created_at"`
 	PaidAt            string  `json:"paid_at"`
 	ErrorMessage      string  `json:"error_message"`
